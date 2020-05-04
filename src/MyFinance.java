@@ -15,6 +15,8 @@ public class MyFinance {
 		month.setbah(scanner.nextInt());
 		System.out.println("Enter your bas amount");
 		month.setbas(scanner.nextInt());
+		
+		//base pay is calculated with a 12% federal tax.  User should enter "before tax pay"
 		System.out.println("Enter your base pay amount");
 		month.setbasepay(scanner.nextInt());
 		
@@ -47,7 +49,7 @@ public class MyFinance {
 		
 		
 	}
-	//methods 2
+	//methods
 	public static void shares (double leftover, double qqq) {
 		double z =  leftover / qqq;
 		System.out.printf("You can buy %.0f shares of QQQ", z);
