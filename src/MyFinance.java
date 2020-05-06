@@ -6,11 +6,12 @@ public class MyFinance {
 		//create scanner
 		Scanner scanner = new Scanner (System.in);
 		
-		//create  month for financial analysis
-		
+		//create  month for financial inquiry
 		Month month = new Month();
 		
 		//prompts user to enter payment amounts
+		//'bah' is basic allowance for housing (military)
+		//'bas' is basic allowance for subsistence (military)
 		System.out.println("Enter your bah amount");
 		month.setbah(scanner.nextInt());
 		System.out.println("Enter your bas amount");
@@ -20,13 +21,16 @@ public class MyFinance {
 		System.out.println("Enter your base pay amount");
 		month.setbasepay(scanner.nextInt());
 		
-		//prompts user for their expenses
+		//prompts user for their expenses (rent and credit card)
 		System.out.println("How much did you pay on rent this much?");
 		month.setrent(scanner.nextInt());
 		System.out.println("How much was your credit card payment?");
 		month.setcreditcard(scanner.nextInt());
 		
 		//prompts user for QQQ's share price
+		//QQQ is used in this instance.  Ideally would ask what fund user would like to invest
+		//in and automatically return share price and amount able to buy
+		
 		System.out.println("What is QQQ's stock price at?");
 		double qqq = scanner.nextDouble();
 		
@@ -43,15 +47,16 @@ public class MyFinance {
 		System.out.println("OUT: ");
 		System.out.println(out);
 		month.leftover(in, out);
+		//could also put 'month.leftover(in,out)' as first variable here, instead of making 
+		//the variable 'left'
 		shares (left, qqq);
-		
-		
 		
 		
 	}
 	//methods
 	public static void shares (double leftover, double qqq) {
 		double z =  leftover / qqq;
+		//'%.0f' is replaced with whatever is 'z' and is rounded to the tenths place
 		System.out.printf("You can buy %.0f shares of QQQ", z);
 	}
 	

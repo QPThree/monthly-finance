@@ -1,11 +1,11 @@
 
 public class Month {
 	
-	//income
+	//income attributes
 	double basepay;
 	int bah;
 	int bas;
-	//expenses
+	//expense attributes
 	int rent;
 	int creditcard;
 	
